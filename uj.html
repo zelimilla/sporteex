@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sporteex Marketing Kft.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function switchLang(lang) {
+      localStorage.setItem('selectedLang', lang);
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const storedLang = localStorage.getItem('selectedLang');
+      const browserLang = navigator.language.slice(0, 2);
+      const preferredLang = storedLang || (browserLang === 'hu' ? 'hu' : 'en');
+      switchLang(preferredLang);
+    });
+  </script>
+</head>
+<body class="font-montserrat bg-gray-50 text-gray-900">
+  <header class="bg-black text-white p-4 flex justify-between items-center">
+    <div class="text-xl font-bold">Sporteex</div>
+    <nav class="space-x-4">
+      <a href="#about" class="hover:underline">Rólunk / About</a>
+      <button onclick="switchLang('en')" class="hover:underline">EN</button>
+      <button onclick="switchLang('hu')" class="hover:underline">HU</button>
+    </nav>
+  </header>
+
+  <section class="h-[80vh] bg-cover bg-center flex flex-col gap-4 items-center justify-center text-white text-center" style="background-image: url('https://source.unsplash.com/1600x900/?concert,sport');">
+    <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg">Modern Merch & Content a Sport és Zene Világából</h1>
+    <div class="w-full max-w-4xl px-4">
+      <video class="rounded shadow-lg w-full" autoplay muted loop playsinline>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        A böngésződ nem támogatja a videó lejátszást.
+      </video>
+    </div>
+  </section>
+
+  <section id="about" class="py-12 px-6 md:px-20">
+    <div data-lang="hu">
+      <h2 class="text-3xl font-bold mb-4">Rólunk</h2>
+      <p class="max-w-3xl">A Sporteex Marketing Kft. sport- és zenei események hivatalos merch partnere. Teljes körű tartalomgyártással, értékesítéssel és helyszíni jelenléttel segítjük partnereinket Európa-szerte.</p>
+    </div>
+    <div data-lang="en" style="display:none">
+      <h2 class="text-3xl font-bold mb-4">About Us</h2>
+      <p class="max-w-3xl">Sporteex Marketing Ltd. is the official merchandise partner for sports and music events across Europe. We provide full content production, sales, and on-site services for our partners.</p>
+    </div>
+  </section>
+
+  <!-- Blog & Media section with embedded Instagram video -->
+  <section id="media" class="py-12 px-6 md:px-20">
+    <div data-lang="hu">
+      <h2 class="text-3xl font-bold mb-4">Blog & Médiatartalom</h2>
+      <p class="mb-4">Nézd meg legfrissebb videónkat az Instagram oldalunkról:</p>
+      <div class="aspect-w-9 aspect-h-16">
+        <iframe src="https://www.instagram.com/p/C8vngzzszBg/embed" class="w-full rounded shadow-lg" height="500" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div data-lang="en" style="display:none">
+      <h2 class="text-3xl font-bold mb-4">Blog & Media</h2>
+      <p class="mb-4">Check out our latest video from Instagram:</p>
+      <div class="aspect-w-9 aspect-h-16">
+        <iframe src="https://www.instagram.com/p/C8vngzzszBg/embed" class="w-full rounded shadow-lg" height="500" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <div data-lang="hu" style="display:none">
+    <!-- Existing Hungarian sections -->
+  </div>
+
+  <div data-lang="en" style="display:none">
+    <!-- Existing English sections -->
+  </div>
+
+  <section id="contact" class="py-12 px-6 md:px-20">
+    <h2 class="text-3xl font-bold mb-4">Kapcsolat / Contact</h2>
+    <p>Email: <a href="mailto:info@sporteex.hu" class="text-blue-600">info@sporteex.hu</a></p>
+    <p>Telefon: +36-1-785-0067</p>
+    <p>Cím: 1095 Budapest, Soroksári út 110-112.</p>
+    <p class="mt-4">
+      <a href="#" class="text-sm text-gray-600 underline">Adatvédelmi tájékoztató</a> |
+      <a href="#" class="text-sm text-gray-600 underline">ÁSZF</a>
+    </p>
+  </section>
+
+  <footer class="bg-black text-white p-6 text-center">
+    <div class="flex justify-center mb-2">
+      <a href="https://www.instagram.com/sporteexmarketing" target="_blank" class="mx-2">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="h-6 inline">
+      </a>
+      <a href="https://www.facebook.com/sporteex" target="_blank" class="mx-2">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook" class="h-6 inline">
+      </a>
+    </div>
+    <p>&copy; 2025 Sporteex Marketing Kft. Minden jog fenntartva.</p>
+  </footer>
+</body>
+</html>
